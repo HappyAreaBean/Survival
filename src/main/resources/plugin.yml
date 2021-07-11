@@ -1,0 +1,24 @@
+name: Survival
+main: cc.happyareabean.survival.Survival
+version: 1.0
+api-version: 1.17
+softdepend: [Multiverse-Core]
+author: HappyAreabean
+commands:
+  spawn:
+  setspawn:
+  support:
+  tpa:
+  tpaccept:
+  tpdeny:
+  tpcancel:
+  scs:
+  hometp:
+  homelist:
+    aliases: [home]
+  sethome:
+  delhome:
+  enderchest:
+    aliases: [ec]
+  invsee:
+  survival:

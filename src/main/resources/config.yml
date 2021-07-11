@@ -1,0 +1,10 @@
+alias:
+  - "world:主世界"
+  - "world_nether:地獄"
+  - "world_the_end:終界"
+
+modules:
+  home: false
+  tpa: false
+  help: false
+  spawn: false
