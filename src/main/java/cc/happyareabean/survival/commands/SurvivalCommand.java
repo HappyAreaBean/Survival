@@ -10,19 +10,19 @@ import org.bukkit.command.CommandSender;
 
 public class SurvivalCommand implements CommandExecutor {
 
-    public SurvivalCommand() {
-        Bukkit.getPluginCommand("survival").setExecutor(this);
-        Bukkit.getConsoleSender().sendMessage(Lang.prefix + "正在加載指令 /survival...");
-    }
+	public SurvivalCommand() {
+		Bukkit.getPluginCommand("survival").setExecutor(this);
+		Bukkit.getConsoleSender().sendMessage(Lang.prefix + "正在加載指令 /survival...");
+	}
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
-        sender.sendMessage(Color.translate("&8&m-------------------------------"));
-        sender.sendMessage(Color.translate("&f這個伺服器目前正在運行 &a&lSurvival"));
-        sender.sendMessage(Color.translate("&fAPI版本: &a&l" + Survival.getInstance().getDescription().getAPIVersion()));
-        sender.sendMessage(Color.translate("&f版本: &a&l" + Survival.getInstance().getDescription().getVersion()));
-        sender.sendMessage(Color.translate("&f作者: &a&l" + Survival.getInstance().getDescription().getAuthors()));
-        sender.sendMessage(Color.translate("&8&m-------------------------------"));
-        return true;
-    }
+	@Override
+	public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
+		sender.sendMessage(Color.translate("&8&m-------------------------------"));
+		sender.sendMessage(Color.translate("&f這個伺服器目前正在運行 &a&lSurvival"));
+		sender.sendMessage(Color.translate("&fAPI版本: &a&l" + Survival.getInstance().getDescription().getAPIVersion()));
+		sender.sendMessage(Color.translate("&f版本: &a&l" + Survival.getInstance().getDescription().getVersion()));
+		sender.sendMessage(Color.translate("&f作者: &a&l" + String.join(", ", Survival.getInstance().getDescription().getAuthors())));
+		sender.sendMessage(Color.translate("&8&m-------------------------------"));
+		return true;
+	}
 }
