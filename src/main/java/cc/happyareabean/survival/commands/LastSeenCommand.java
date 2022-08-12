@@ -7,6 +7,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.ocpsoft.prettytime.PrettyTime;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -23,12 +24,16 @@ public class LastSeenCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm:ss").withZone(ZoneId.systemDefault());
+		PrettyTime p = new PrettyTime();
 
 		if (args.length == 0) {
 			sender.sendMessage(Color.translate("&cUsage: /lastseen <Player/UUID>"));
 		} else {
 			OfflinePlayer player = Bukkit.getOfflinePlayer(UUID.fromString(args[0]));
-			sender.sendMessage(Color.translate("&e" + player.getName() + "&a last joined: &e" + formatter.format(Instant.ofEpochMilli(player.getLastPlayed()))));
+			long lastPlayed = player.getLastPlayed();
+			sender.sendMessage(Color.translate("&e" + player.getName() +
+					"&a last joined: &e" + formatter.format(Instant.ofEpochMilli(lastPlayed))
+					+ " &7(" + p.format(Instant.ofEpochMilli(lastPlayed)) + "&7)"));
 		}
 
 		return true;

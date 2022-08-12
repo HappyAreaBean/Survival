@@ -3,6 +3,7 @@
  */
 
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
     id 'kr.entree.spigradle' version '2.4.2'
 }
@@ -86,10 +87,16 @@ spigot {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
     compileOnly 'me.clip:placeholderapi:2.11.2'
+    implementation 'org.ocpsoft.prettytime:prettytime:5.0.3.Final'
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    relocate 'org.ocpsoft', 'cc.happyareabean.libs.prettytime'
 }
