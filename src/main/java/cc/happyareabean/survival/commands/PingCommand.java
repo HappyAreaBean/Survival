@@ -25,7 +25,16 @@ public class PingCommand implements CommandExecutor {
 			return true;
 		}
 
-		player.sendMessage(Color.translate("&a&l綠豆SMP › &f你的延遲為 &a" + player.getPing() + "ms"));
+		if (args.length == 0) {
+			player.sendMessage(Color.translate("&a&l綠豆SMP › &f你的延遲為 &a" + player.getPing() + "ms"));
+		} else {
+			if (Bukkit.getPlayer(args[0]) == null) {
+				player.sendMessage(Color.translate("&a&l綠豆SMP › &c你所輸入的玩家並不存在!"));
+				return true;
+			}
+			Player target = Bukkit.getPlayer(args[0]);
+			player.sendMessage(Color.translate("&a&l綠豆SMP › &a" + target.getName() + " &f的延遲為 &a" + target.getPing() + "ms"));
+		}
 
 		return true;
 	}
