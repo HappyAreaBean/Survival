@@ -37,6 +37,9 @@ spigot {
     softDepends 'PlaceholderAPI', 'Multiverse-Core'
     authors 'HappyAreaBean'
     commands {
+        survival {
+            description = 'The main command of Survival.'
+        }
         spawn {
             description = 'Teleport to spawn.'
             permission = 'survival.player'
