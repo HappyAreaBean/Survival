@@ -26,6 +26,7 @@ group = 'Survival'
 version = property("projectVersion") as String // from gradle.properties
 description = 'Survival'
 java.sourceCompatibility = JavaLanguageVersion.of(17)
+compileJava.options.encoding = 'UTF-8'
 
 spigot {
     // The 'name' and 'version' will be set to project.version and project.name,
