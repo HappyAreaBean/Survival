@@ -4,6 +4,7 @@ import cc.happyareabean.survival.commands.EnderChestCommand;
 import cc.happyareabean.survival.commands.HelpCommand;
 import cc.happyareabean.survival.commands.HomeCommand;
 import cc.happyareabean.survival.commands.InvseeCommand;
+import cc.happyareabean.survival.commands.LastSeenCommand;
 import cc.happyareabean.survival.commands.PingCommand;
 import cc.happyareabean.survival.commands.SCSCommand;
 import cc.happyareabean.survival.commands.SetSpawnCommand;
@@ -78,6 +79,7 @@ public class Survival extends JavaPlugin {
 		new EnderChestCommand();
 		new InvseeCommand();
 		new SurvivalCommand();
+		new LastSeenCommand();
 		long cmdfinished = System.currentTimeMillis();
 		log("已成功加載所有指令 &7(花費" + (cmdfinished - cmdload) + "ms)");
 

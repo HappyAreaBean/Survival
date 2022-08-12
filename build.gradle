@@ -48,6 +48,10 @@ spigot {
             description = 'Set spawn point.'
             permission = 'survival.admin'
         }
+        lastseen {
+            description = 'View offline player information.'
+            permission = 'survival.admin'
+        }
         invsee {
             description = 'View player inventory.'
             permission = 'survival.admin'
